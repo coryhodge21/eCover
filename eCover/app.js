@@ -5,9 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-// reuire entrypoint for app after index (above) has been redirected
-var catalogRouter = require('./routes/catalog');
+var userRouter = require('./routes/user');
+
 var app = express();
 
 //Set up mongoose connection
@@ -28,9 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-// use catalog routes in middleware chain
-app.use('/catalog', catalogRouter);
+app.use('/user', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

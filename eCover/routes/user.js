@@ -1,5 +1,5 @@
 /**
-* routes/catalog.js
+* routes/users.js
 *
 * Routes made for extending application
 */
@@ -11,15 +11,11 @@ var express = require('express');
 //  routes to application
 var router = express.Router();
 
-// Import Controller definitions for method calls: relative path to controller
+// Import Controller definitions for control method calls:
+//  relative path to controller
 var userController = require('../controllers/userController');
 
-///   USER routes   ///
-
-// GET catalog home page
-// This actually maps to /catalog/ 
-//  because we import the route with a /catalog prefix
-router.get('/', userController.index);
+/*   USER routes   */
 
 // GET request for creating User
 router.get('/user/create', userController.user_create_get);
@@ -43,7 +39,9 @@ router.post('/user/:id/update', userController.user_update_post);
 router.get('/user/:id', userController.user_detail);
 
 // GET request for list of all Book items.
-router.get('/user', userController.user_list);
+router.get('/', function (req, res, next) {
+  res.send('User: not yet implimented');
+});
 
 // VERY IMPORTANT to include at end of file
 module.exports = router;

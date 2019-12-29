@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.redirect('/catalog');
+  res.send('Not yet implimented');
 });
 
 module.exports = router;
