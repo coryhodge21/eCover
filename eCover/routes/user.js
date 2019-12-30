@@ -18,7 +18,7 @@ var userController = require('../controllers/userController');
 /*   USER routes   */
 //    /user/
 router.get('/', function (req, res, next) {
-  res.render('user');
+  res.render('user/user');
 });
 
 // GET request for creating User

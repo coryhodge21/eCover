@@ -1,5 +1,5 @@
 /**
-* routes/users.js
+* routes/devRoutes.js
 *
 * Routes made for extending application
 */
@@ -17,7 +17,12 @@ var devController = require('../controllers/devController');
 
 // GET request for list of all Book items.
 router.get('/', function (req, res, next) {
-  res.render('devView');
+  res.render('dev/dev_home');
+});
+
+// Extending Website  : /dev/ext
+router.get('/ext', function (req, res, next) {
+  res.render('dev/dev_ext');
 });
 
 // VERY IMPORTANT to include at end of file
