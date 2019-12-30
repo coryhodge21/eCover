@@ -20,6 +20,9 @@ var userController = require('../controllers/userController');
 router.get('/', function (req, res, next) {
   res.render('user/user');
 });
+///TODO: i think the below need to be get('/create')
+//            because in the user routes file all urls already have /user/... extension 
+//            added to the begining
 
 // GET request for creating User
 router.get('/user/create', userController.user_create_get);

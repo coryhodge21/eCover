@@ -22,5 +22,12 @@ exports.dev_home = function(req, res) {
     // perform any database operations
 
     // render the home page with template and argument array
-    res.render('devView');
+    res.render('dev/dev_home');
 };
+
+/**
+ * Extension Link Method
+ */
+exports.dev_ext = function(req, res) {
+    res.render('dev/dev_ext');
+}
