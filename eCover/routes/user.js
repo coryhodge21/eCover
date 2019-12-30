@@ -16,6 +16,10 @@ var router = express.Router();
 var userController = require('../controllers/userController');
 
 /*   USER routes   */
+//    /user/
+router.get('/', function (req, res, next) {
+  res.render('user');
+});
 
 // GET request for creating User
 router.get('/user/create', userController.user_create_get);
@@ -37,11 +41,6 @@ router.post('/user/:id/update', userController.user_update_post);
 
 // GET request for one USER.
 router.get('/user/:id', userController.user_detail);
-
-// GET request for list of all Book items.
-router.get('/', function (req, res, next) {
-  res.send('User: not yet implimented');
-});
 
 // VERY IMPORTANT to include at end of file
 module.exports = router;

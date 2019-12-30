@@ -1,7 +1,27 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #[em eCover], a Financial Assistance Application.
 
-  h1 User:
+  div(class='overview-container')
+    h1  Overview
+    ul(class='overview-items-list')
+      li
+        p Daily Spending  :   Value
+      li
+        p Saving Goal   :   On Track
+
+
+
+  div(class='banking-container')
+    h3  Banking
+    ul(class='bank-list')
+      li
+        p Bank 1  : Balance
+      li
+        p Bank 2  : Balance
+
+  div(class='debt-container')
+    h3  Debt
+      ul(class='debt-list')
+        li
+          p Debt 1 : $nextPayment  : due date  : $totalRemaining Balance

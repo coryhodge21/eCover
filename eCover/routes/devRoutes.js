@@ -16,10 +16,9 @@ var router = express.Router();
 var devController = require('../controllers/devController');
 
 // GET request for list of all Book items.
-router.get('/', devController.dev_home);
-
-// GET request for list of all Book items.
-router.get('/devMode', devController.dev_home);
+router.get('/', function (req, res, next) {
+  res.render('devView');
+});
 
 // VERY IMPORTANT to include at end of file
 module.exports = router;
