@@ -2,8 +2,7 @@
 * controllers/userController.js
 */
 // Tool Imports
-const { body,validationResult } = require('express-validator/check');
-const { sanitizeBody } = require('express-validator/filter');
+const validator = require('express-validator');
 
 // Require the User Model be imported
 var Dev = require('../models/devModel.js');
@@ -32,7 +31,19 @@ exports.dev_ext = function(req, res, next) {
     var checkingAccount = new CheckingModel();
 
     checkingAccount.set('_name' , 'Chase Checking');
-
+    checkingAccount.set('_balance', 713);
     
-    res.render('dev/dev_ext', {name: checkingAccount.get('_name')});
+    res.render('dev/dev_ext', 
+        {
+            name: checkingAccount.get('_name'),
+            balance: checkingAccount.get('_balance')
+        }
+    );
+};
+
+/**
+ * Create account
+ */
+exports.dev_create_user = function(req, res, next) {
+    
 };

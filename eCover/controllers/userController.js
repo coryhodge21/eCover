@@ -4,9 +4,10 @@
 // Tool Imports
 const { body,validationResult } = require('express-validator/check');
 const { sanitizeBody } = require('express-validator/filter');
+const async = require('async');
 
 // Require the User Model be imported
-var User = require('../models/user_model.js');
+var UserModel = require('../models/user_model.js');
 
 
 /*
@@ -26,38 +27,68 @@ exports.index = function(req, res) {
 };
 
 // custom methods for returning data about this Schema/Model/Class
+// GET: /user/create
 exports.user_create_get = function(req, res) {
-  // Get all authors and genres, which we can use for adding to our book.
-async.parallel({
-  _name: function(callback) {
-      User.find(callback);
-  },
-  _checkings: function(callback) {
-      User.find(callback);
-  },
-}, function(err, results) {
-  if (err) { return next(err); }
-  res.render('book_form', { title: 'Create Book', authors: results.authors, genres: results.genres });
-});
+
+  res.render('user/user_create');
 };
 
+// POST: /user/create
 exports.user_create_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: List All User Accounts');
+    
+    // Create Model
+    var Cory = new UserModel({_name: 'Cory'});
+
+    // check if model with this name exists in database
+    //      before creating a new one
+
+    // Save to Collection
+    Cory.save()
+        .then( doc => {
+            console.log(doc)
+            }
+        ).catch(
+            err => {
+            console.error(err)
+            }
+        );
+
+    
+};
+
+exports.user_find_get = function(req, res) {
+    
+    UserModel.find( 
+        // search query
+        { _name: 'Cory' }
+    ).then( 
+        doc => {
+            console.log(doc)
+        }
+    ).catch(
+        err => {
+            console.error(err)
+        }
+    );
 };
 
 exports.user_delete_get = function(req, res) {
+    //res.render('dev/route_test');
     res.send('NOT IMPLEMENTED: List All User Accounts');
 };
 
 exports.user_delete_post = function(req, res) {
+    //res.render('dev/route_test');
     res.send('NOT IMPLEMENTED: List All User Accounts');
 };
 
 exports.user_update_get = function(req, res) {
+    //res.render('dev/route_test');
     res.send('NOT IMPLEMENTED: List All User Accounts');
 };
 
 exports.user_update_post = function(req, res) {
+    //res.render('dev/route_test');
     res.send('NOT IMPLEMENTED: List All User Accounts');
 };
 

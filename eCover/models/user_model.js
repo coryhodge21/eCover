@@ -20,5 +20,7 @@ UserSchema
   return '/user/' + this._id;
 });
 
-//Export model
+// call the model constructor on the 
+//  Mongoose instance and pass it the name of the 
+//  collection and a reference to the schema definition.
 module.exports = mongoose.model('User', UserSchema);

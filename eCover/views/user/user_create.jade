@@ -1,0 +1,33 @@
+//
+  user_create.jade
+  variables :
+    +userName
+//.
+extends ../public/layout
+
+block sidebar-extension
+  
+  ul(class='sidebar-nav') 
+    li 
+      a(href='/user/create') Create User
+    li  
+      hr
+
+block content
+  div(class='user-create-form')
+  h1 #{name}
+
+  form(method='POST' action='../../user/create')
+    div.form-group
+      label(for='name') Name:
+      input#name.form-control(
+        type='text', 
+        name='name' 
+        value='current name: #{name}'
+      )
+      button.btn.btn-primary(type='submit') Submit
+
+  if errors 
+   ul
+    for error in errors
+     li!= error.msg

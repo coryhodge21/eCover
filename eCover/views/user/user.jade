@@ -1,9 +1,21 @@
+//
+  user.jade
+  variables :
+    +userName
+//.
 extends ../public/layout
 
-block content
+block sidebar-extension
+  
+  ul(class='sidebar-nav') 
+    li 
+      a(href='/user/create') Create User
+    li  
+      hr
 
-  div(class='user')
-    h1 userName
+block content
+  div(class='user-heading')
+    h1= userName
     ul(class='user-details')
       li
         p User Name :   userName

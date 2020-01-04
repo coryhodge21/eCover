@@ -25,25 +25,25 @@ router.get('/', function (req, res, next) {
 //            added to the begining
 
 // GET request for creating User
-router.get('/user/create', userController.user_create_get);
+router.get('/create', userController.user_create_get);
 
 // POST Request for creating User
-router.post('/user/create',userController.user_create_post);
+router.post('/create',userController.user_create_post);
 
 // GET Request to delete USER
-router.get('/user/:id/delete', userController.user_delete_get);
+router.get('/:id/delete', userController.user_delete_get);
 
 // POST Request to delete USER
-router.post('/user/:id/delete', userController.user_delete_post);
+router.post('/:id/delete', userController.user_delete_post);
 
 // GET request to update USER.
-router.get('/user/:id/update', userController.user_update_get);
+router.get('/:id/update', userController.user_update_get);
 
 // POST request to update USER.
-router.post('/user/:id/update', userController.user_update_post);
+router.post('/:id/update', userController.user_update_post);
 
 // GET request for one USER.
-router.get('/user/:id', userController.user_detail);
+router.get('/:id', userController.user_detail);
 
 // VERY IMPORTANT to include at end of file
 module.exports = router;
