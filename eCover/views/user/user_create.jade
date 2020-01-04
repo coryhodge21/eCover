@@ -2,7 +2,7 @@
   user_create.jade
   variables :
     +userName
-//.
+//
 extends ../public/layout
 
 block sidebar-extension
@@ -22,8 +22,8 @@ block content
       label(for='name') Name:
       input#name.form-control(
         type='text', 
-        name='name' 
-        value='current name: #{name}'
+        name='name' ,
+        value='\#{userName}'
       )
       button.btn.btn-primary(type='submit') Submit
 

@@ -6,6 +6,8 @@ const { body,validationResult } = require('express-validator/check');
 const { sanitizeBody } = require('express-validator/filter');
 const async = require('async');
 
+const mongoose = require('mongoose');
+
 // Require the User Model be imported
 var UserModel = require('../models/user_model.js');
 
@@ -53,7 +55,7 @@ exports.user_create_post = function(req, res) {
             }
         );
 
-    
+        res.render('user/user', {userFirstName: Cory.get('_name')});
 };
 
 exports.user_find_get = function(req, res) {

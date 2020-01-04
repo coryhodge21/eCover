@@ -16,7 +16,7 @@ var router = express.Router();
 var userController = require('../controllers/userController');
 
 /*   USER routes   */
-//    /user/
+//    absolute path: /user/
 router.get('/', function (req, res, next) {
   res.render('user/user');
 });
