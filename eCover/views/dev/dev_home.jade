@@ -3,9 +3,82 @@ extend ../public/layout
 block content
   
   div( class="dev-home-heading" )
-    a( href='/dev/ext' ) Dev Testing
+    h1  Dev Area
+    p   link for refreshing this url
+    a(href="/dev") refresh
+    p   link for extension page
+    a( href='/dev/ext' ) Dev Extension
 
 
-  div( class="user-home-heading")
-    h1 
-    p 
+  div( class="headings")
+
+    div( class="heading_1")
+
+      h1 (h1) using javascript in pug or jade file
+      p paragraph
+
+    div( class="heading_2")
+
+      - var title = "(h2) Interpolation";
+      - var variable = "#{variable} or keyword= variable";
+      - var withHTML = "<span>with HTML</span>";
+
+      h2= title
+      p Using vars in place of template data 
+      p Syntax: #{variable}
+      p Safe to use html : #{withHTML} 
+
+    div( class="heading_3")
+
+      h3 h3 Interpolation and Escaping
+      p Escaping works with \#{interpolation}
+      p Interpolation works with #{'#{interpolation}'} too!
+
+    div( class="heading_4")
+
+      h4 h4 multiline syntax example
+      p.
+        This is a very long and boring paragraph that spans multiple lines.
+        Suddenly there is a #[strong strongly worded phrase] that cannot be
+        #[em ignored].
+      p.
+        And here's an example of an interpolated tag with an attribute:
+        #[q(lang="es") ¡Hola Mundo!]
+      p
+        | If I don't write the paragraph with tag interpolation, tags like
+        strong strong
+        | and
+        em em
+        | might produce unexpected results.
+      p.
+        If I do, whitespace is #[strong respected] and #[em everybody] is happy.
+
+    div( class="heading_5")
+      h5 h5 Iteration
+      - var itemList = ['item 1', 'item 2', 'item 3', 'item 4']
+      ul
+        p list without index
+        each item in itemList
+          li= item
+
+        p list with index
+        for item,index in itemList
+          li= index + ' ' + item
+
+    div( class="heading_6")
+      - var myMap = {1:'one',2:'two',3:'three'};
+      h6 h6 Map with Key Pair sytnax
+      ul  
+        for value,key in myMap
+          li= key + ' ' + value
+
+    div( class="heading_7")
+      h7 h7 heading
+
+    div( class="heading_8")
+      h8 h8 
+       
+    div( class="heading_9")
+      h9 h9 
+      
+     
