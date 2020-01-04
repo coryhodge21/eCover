@@ -16,6 +16,7 @@ var devRouter = require('./routes/devRoutes');
 /*  Create app  */
 var app = express();
 
+
 /*    Set up mongoose connection        */
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://127.0.0.1/eCover_db';
