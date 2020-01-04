@@ -15,27 +15,28 @@ html(lang='en')
           block sidebar
             ul(class='sidebar-nav')
               li
-                a(href='/dev') Dev
-              li
                 a(href='/') Home
               li
-                a(href='/user') User
+                //- 
+                  TODO: dynamicly insert 
+                  users actual first name here
+                a(href='/user') Personal Info
+              hr 
               li
-                  a(href='/redirect') Projections
-              li
-                hr
+                a(href='/redirect') Projections
               li
                 a(href='/redirect') Accounts
               li
-                a(href='/redirect') Bills
+                a(href='/redirect') Goals
+              hr
               li
-                a(href='/redirect') Savings
-              li
-                hr
+                a(href='/dev') Dev
               
           block sidebar-extension
             
-          
-
         div(class='col-sm-10')
           block content
+
+    div(class='row')
+      div(class='col-sm-20')
+        block centerBody

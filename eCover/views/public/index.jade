@@ -1,27 +1,16 @@
 extends layout
 
 block content
-
-  div(class='overview-container')
-    h1  Overview
-    ul(class='overview-items-list')
-      li
-        p Daily Spending  :   Value
-      li
-        p Saving Goal   :   On Track
-
-
-
-  div(class='banking-container')
-    h3  Banking
-    ul(class='bank-list')
-      li
-        p Bank 1  : Balance
-      li
-        p Bank 2  : Balance
-
-  div(class='debt-container')
-    h3  Debt
-      ul(class='debt-list')
-        li
-          p Debt 1 : $nextPayment  : due date  : $totalRemaining Balance
+  div(class="user-home-page")
+    div(class="title")
+      h1 \#{User Name Here}
+    div(class="overview")
+      div(class="todays-spending-limit")
+        h3 Todays Spending Limit: 
+        p <em> \#{todaysSpendingLimit} </em>
+      div(class="spending-until-next-check")
+        h3 Spending until next check: 
+        p <em> \#{spendingUntilNextCheck} </em>
+      div(class="goals")
+        h3 Goals: 
+        p <em> \#{ enum: [ "On Track" , "Off Track"]}
